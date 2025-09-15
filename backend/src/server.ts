@@ -4,7 +4,16 @@ import { z } from 'zod';
 import { verifyMessage, getAddress } from 'ethers';
 
 const app = express();
-app.use(cors());
+// Allow only your dev + prod frontends
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://web3-message-signer.vercel.app'
+  ],
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
 app.use(express.json({ limit: '1mb' }));
 
 // Simple health
