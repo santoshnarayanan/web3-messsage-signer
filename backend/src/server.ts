@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://web3-message-signer.vercel.app'
+    'https://web3-messsage-signer.vercel.app'
   ],
   methods: ['GET', 'POST'],
   credentials: true
